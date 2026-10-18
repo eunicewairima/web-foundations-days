@@ -1,0 +1,7 @@
+# Day 8 reflection
+
+The most difficult concept in the course was reasoning about concurrent updates without assuming that requests arrive one at a time. It was easy to think of a seat as “available” because a seat-map page showed it that way, but two buyers can see the same snapshot and submit a request almost simultaneously. I worked through this by tracing the competing requests as database transactions, then using a row lock, a conditional state change, and a uniqueness constraint as separate safeguards. Thinking through expiry and payment retries helped me see that correctness also depends on failure cases, not just the happy path.
+
+Based on the feedback I received, I would improve my capstone by making its capacity and failure assumptions more explicit. In particular, I would add a load-test plan with measurable targets and explain which reads can be stale and which writes must be authoritative. The TicketHub design applies that lesson by estimating traffic from stated facts, labeling assumptions, and keeping seat allocation on the transactional database rather than trusting a cache.
+
+Next, I want to learn how to validate system designs with practical load testing and observability: generating realistic concurrent traffic, reading latency and database-contention metrics, and using the results to tune admission rates. That would help me replace rough estimates with evidence and make better scaling decisions.
