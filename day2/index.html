@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>QuickNotes</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>QuickNotes</h1>
+    <p>Capture your thoughts, one note at a time.</p>
+    <nav aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Your notes</h2>
+    <form>
+      <label for="note-title">Note title</label>
+      <input type="text" id="note-title" name="note-title">
+      <label for="note-content">Note</label>
+      <textarea id="note-content" name="note-content" rows="5" cols="40"></textarea>
+      <button type="submit">Save note</button>
+    </form>
+    <section aria-labelledby="saved-notes-heading">
+      <h2 id="saved-notes-heading">Saved notes</h2>
+      <p>Your notes will appear here.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 QuickNotes</p>
+  </footer>
+</body>
+</html>
